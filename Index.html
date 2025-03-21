@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DATOS/css/style.css">
+    <link rel="icon" href="DATOS/img/flowers.png" type="image/x-icon">
+    <title>FLORES</title>
+</head>
+<body>
+    <div class="greetings">
+        <span>H</span>
+        <span>O</span>
+        <span>L</span>
+        <span>A</span>
+        <span>&nbsp;</span>
+        <span>A</span>
+        <span>M</span>
+        <span>O</span>
+        <span>R</span>
+    </div>
+    <div class="greetings">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="description">
+        <span>TENGO UNA SORPRESA PARA TÍ ESPERO TE GUSTE!!!</span>
+    </div>
+    
+    <div class="button">
+        <button class="open-modal-button">Abrir Carta</button>
+    </div>
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="card">
+                <h2>Carta Especial</h2>
+                <p>Mi Amor: </p>
+                <p>No encuentro las palabras exactas para expresar todo lo que siento, pero quiero que sepas cuánto te agradezco por tu amor y apoyo incondicional. Tu presencia en mi vida me ha dado una fuerza inmensa, y todo lo que hago lo hago pensando en ti.
+
+                    Quiero aprovechar para pedirte perdón por los errores que cometí. Pero lo que nunca ha cambiado es el amor profundo que siento por ti. Lamento si alguna vez te hice sentir mal o te hice dudar de lo que somos y de lo que siento por ti.
+                    
+                    Te amo con todo mi ser, Mariana y me siento afortunado de poder compartir mi vida contigo. Prometo seguir cambiando y mejorando en nuestra relación, para que siempre estemos juntos, en las buenas y en las malas.
+                    
+                    Te amo más de lo que las palabras pueden describir, y no hay nada que desee más que hacerte feliz.
+                    </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="button" id="clickButton" style="display:none;">
+        <a href="DATOS/FLORES.html" class="heart-button">click aqui!!</a>
+    </div>
+
+
+    <div id="toast" class="toast">
+        <span>❤️ Nueva sorpresa desbloqueada! <br> TE AMO TANTO❤️</span>
+    </div>
+
+    <style>
+        .toast {
+            visibility: hidden;
+            width: 300px;
+            background-color: #FF5733; 
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            position: fixed;
+            top: 50%;  
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+        }
+
+        
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.05); 
+        }
+
+        
+        .heart-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #ff3366;
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        .heart-button:before,
+        .heart-button:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff3366;
+            border-radius: 50%;
+            top: -10px;
+            transition: all 0.3s ease;
+        }
+
+        .heart-button:before {
+            left: -10px;
+        }
+
+        .heart-button:after {
+            right: -10px;
+        }
+
+        .heart-button:hover:before,
+        .heart-button:hover:after {
+            top: 0;
+        }
+
+        .heart-button:hover {
+            background-color: #ff6699;
+        }
+
+        .heart-button {
+            font-family: Arial, sans-serif;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            color: #ff3366;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        .open-modal-button {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #ff3366;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .open-modal-button:hover {
+            background-color: #ff6699;
+        }
+    </style>
+
+    <script>
+        var modal = document.getElementById("modal");
+        var btn = document.querySelector(".open-modal-button");
+        var span = document.querySelector(".close");
+        var clickButton = document.getElementById("clickButton");
+        var toast = document.getElementById("toast");
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    
+        span.onclick = function() {
+            modal.style.display = "none";
+            clickButton.style.display = "inline-block"; 
+            toast.classList.add("show");
+            
+        
+            setTimeout(function() {
+                toast.classList.remove("show");
+            }, 3000);
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                clickButton.style.display = "inline-block"; 
+                
+                toast.classList.add("show");
+                
+                
+                setTimeout(function() {
+                    toast.classList.remove("show");
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>
